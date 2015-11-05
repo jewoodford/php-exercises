@@ -25,7 +25,7 @@ $books = array(
 foreach ($books as $title => $book) {
     if ($book['published'] > 1950) {
         foreach ($book as $key => $info) {
-            echo "{$title}'s {$key} is {$info}\n";
+            echo "'{$title}': {$key} - {$info}\n";
         }
     }
 }
