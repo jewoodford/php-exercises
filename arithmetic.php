@@ -1,31 +1,55 @@
 <?php
+function validate($a, $b) {
+	if (is_numeric($a) && is_numeric($b)) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 function add($a, $b)
-{
-    return $a + $b;
+{	
+	if (validate($a, $b)) {
+		return $a + $b;
+	} else {
+		return 'ERROR: Bothe arguments must be numeric' . PHP_EOL;
+	}
 }
 
 function subtract($a, $b)
 {
-	return $a - $b;
-    // Add code here
+	if (validate($a, $b)) {
+		return $a - $b;
+	} else {
+		return 'ERROR: Bothe arguments must be numeric' . PHP_EOL;
+	}
 }
 
 function multiply($a, $b)
 {
-	return $a * $b;
-    // Add code here
+	if (validate($a, $b)) {
+		return $a * $b;
+	} else {
+		return 'ERROR: Bothe arguments must be numeric' . PHP_EOL;
+	}
 }
 
 function divide($a, $b)
 {
-	return $a / $b;
-    // Add code here
+	if (validate($a, $b)) {
+		return $a / $b;
+	} else {
+		return 'ERROR: Bothe arguments must be numeric' . PHP_EOL;
+	}
 }
 
 function modulus($a, $b)
 {
-	return $a % $b;
+	if (validate($a, $b)) {
+		return $a % $b;
+	} else {
+		return 'ERROR: Bothe arguments must be numeric' . PHP_EOL;
+	}
 }
 
 echo add(9, 3) . PHP_EOL;
