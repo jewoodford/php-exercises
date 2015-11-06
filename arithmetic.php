@@ -1,71 +1,82 @@
 <?php
-function validate($a, $b) {
+function validate($a, $b)
+{
 	if (is_numeric($a) && is_numeric($b)) {
 		return true;
 	} else {
+		echo 'ERROR: Both arguments must be numeric ' . $a . ' ' . $b;
 		return false;
 	}
 }
 
-function errorMessage($a, $b) {
-	if (validate($a, $b)) {
-		return true;
-	} else {
-		return 'ERROR: Both arguments must be numeric ' . $a . ' ' . $b;
-	}
-}
+// function errorMessage($a, $b)
+// {
+// 	if (validate($a, $b)) {
+// 		return true;
+// 	} else {
+// 		return 'ERROR: Both arguments must be numeric ' . $a . ' ' . $b;
+// 	}
+// }
 
 function add($a, $b)
 {	
-	$isValid = errorMessage($a, $b);
-	if ($isValid === true) {
+	// $isValid = errorMessage($a, $b);
+	if (validate($a, $b)) {
 		return $a + $b;
-	} else {
-		return $isValid;
 	}
+	// } else {
+	// 	return $isValid;
+	// }
 }
 
 function subtract($a, $b)
 {
-	$isValid = errorMessage($a, $b);
+	// $isValid = errorMessage($a, $b);
 	if (validate($a, $b)) {
 		return $a - $b;
-	} else {
-		return $isValid;
 	}
+	// } else {
+	// 	return $isValid;
+	// }
 }
 
 function multiply($a, $b)
 {
-	$isValid = errorMessage($a, $b);
+	// $isValid = errorMessage($a, $b);
 	if (validate($a, $b)) {
 		return $a * $b;
-	} else {
-		return $isValid;
 	}
+	// } else {
+	// 	return $isValid;
+	// }
 }
 
 function divide($a, $b)
 {
 	if ($b == 0) {
-		return "ERROR: You are trying to destroy us all! " . $a . ' ' . $b;
+		return 'ERROR: You are trying to destroy us all! ' . $a . ' ' . $b;
 	}
-	$isValid = errorMessage($a, $b);
+	// $isValid = errorMessage($a, $b);
 	if (validate($a, $b)) {
 		return $a / $b;
-	} else {
-		return $isValid;
 	}
+	// } else {
+	// 	return $isValid;
+	// }
 }
 
 function modulus($a, $b)
-{
-	$isValid = errorMessage($a, $b);
+{	
+	if ($b == 0) {
+		return 'ERROR: You are trying to destroy us all! ' . $a . ' ' . $b;
+	}
+	// $isValid = errorMessage($a, $b);
 	if (validate($a, $b)) {
 		return $a % $b;
-	} else {
-		return $isValid;
 	}
+	// } else {
+	// 	return $isValid;
+	// }
 }
 
 echo add(9, "notNumeric") . PHP_EOL;
