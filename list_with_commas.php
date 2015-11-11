@@ -2,6 +2,7 @@
 
  // Converts array into list n1, n2, ..., and n3
  function humanizedList($array) {
+ 	sort($array);
    $lastItem = array_pop($array);
    $humanLastItem = 'and ' . $lastItem;
    array_push($array, $humanLastItem);
